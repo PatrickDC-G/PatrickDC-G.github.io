@@ -15,7 +15,7 @@
     <header class="h-14 bg-gray-100 px-4 border-b">
         <div class="container mx-auto h-full">
             <div class="flex justify-between items-center h-full">
-                <div class="flex items-center h-full">
+                <div class="flex items-center h-full mr-4">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-5 h-5 mr-3">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M3.75 6.75h16.5M3.75 12h16.5m-16.5 5.25h16.5" />
                       </svg>                      
@@ -26,15 +26,15 @@
                 <nav class="h-full flex items-center">
                     <ul class="flex items-center space-x-4 h-full">
                         <li>
-                            <input type="text" class="py-1.5 px-3 border rounded-md w-96" placeholder="Buscar...">
+                            <input type="text" class="py-1.5 px-3 border rounded-md w-full md:w-96" placeholder="Buscar...">
                         </li>
-                        <li class="flex items-center rounded-md py-1.5 px-3 border border-black">
+                        <li class=" items-center rounded-md py-1.5 px-3 border border-black hidden md:flex">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
                                 <path stroke-linecap="round" stroke-linejoin="round" d="m2.25 12 8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25" />
                               </svg>                              
                             Inicio
                         </li>
-                        <li class=" rounded-full bg-gray-300 py-1.5 px-3">Certificados</li>
+                        <li class=" rounded-full bg-gray-300 py-1.5 px-3 hidden md:block">Certificados</li>
                         <li class="rounded-full h-11 w-11 bg-gray-300 overflow-hidden"><img src="./img/descarga.jpeg" alt=""></li>
                     </ul>
                 </nav>
@@ -104,7 +104,7 @@
                             <div class=" text-xs leading-none py-1 text-center text-white" style="width: 80%; background-color: #1F4034;">80%</div>
                           </div>
                     </div>
-                    <div class="flex items-center w-full mb-4">
+                    <div class="flex items-center w-full mb-6">
                         <div class="mr-2">
                             Tailwind
                         </div>
