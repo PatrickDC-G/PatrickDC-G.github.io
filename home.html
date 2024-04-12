@@ -28,7 +28,7 @@
                 <nav class="h-full flex items-center">
                     <ul class="flex items-center space-x-4 h-full">
                         <li>
-                            <input type="text" class="py-1.5 px-3 border rounded-md w-full md:w-96" placeholder="Buscar...">
+                            <input type="text" id="searchInput" class="py-1.5 px-3 border rounded-md w-full md:w-96" placeholder="Buscar...">
                         </li>
                         <li class=" items-center rounded-md py-1.5 px-3 border border-black hidden md:flex">
                             <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4 mr-2">
@@ -165,20 +165,79 @@
                         </div>
                     </div>
                     <div class="flex items-center space-x-4">
-                        <div class="rounded-full h-9 w-9 bg-gray-300 overflow-hidden mr-3 flex items-center justify-center">
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
-                              </svg>
-                     
-                                                            
+                        <div class="relative">
+                            <div id="shareButton1" class="rounded-full h-9 w-9 bg-gray-300 overflow-hidden mr-3 flex items-center justify-center cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M7.217 10.907a2.25 2.25 0 1 0 0 2.186m0-2.186c.18.324.283.696.283 1.093s-.103.77-.283 1.093m0-2.186 9.566-5.314m-9.566 7.5 9.566 5.314m0 0a2.25 2.25 0 1 0 3.935 2.186 2.25 2.25 0 0 0-3.935-2.186Zm0-12.814a2.25 2.25 0 1 0 3.933-2.185 2.25 2.25 0 0 0-3.933 2.185Z" />
+                                </svg>
+                            </div>
+                        
+                            <!-- Dropdown -->
+                            <div id="dropdownMenu1" class="absolute right-0 mt-2 w-72 bg-white rounded-md shadow-lg hidden border">
+                                <div class="py-1">
+                                    <div class="flex items-center justify-between px-4 py-2 text-sm text-gray-700 space-x-4">
+                                        <div class="overflow-hidden flex-grow">
+                                            <input type="text" value="https://example.com" readonly class="bg-gray-100 px-3 py-2 cursor-not-allowed truncate">
+                                        </div>
+                                        <button id="copyLinkButton" class="text-blue-500 bg-blue-200 focus:outline-none px-3 py-2 rounded">Copiar</button>
+                                    </div>
+                                    
+                                    <div class="flex items-center justify-center space-x-4 px-4 py-2">
+                                        <a href="#" class="text-gray-700 hover:text-blue-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="text-gray-700 hover:text-blue-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M17 17.99l-5 .01M12 21.99V10m0 11.99V21a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2v-7.01M7 10V6a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v4" />
+                                            </svg>
+                                        </a>
+                                        <a href="#" class="text-gray-700 hover:text-blue-700">
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" class="w-6 h-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M20.667 12h-2v2h2v-2Zm-4 0h-2v2h2v-2Zm-4 0h-2v2h2v-2Zm-8-4h16v8h-16v-8Z" />
+                                            </svg>
+                                        </a>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
-                        <div class="rounded-full h-9 w-9 bg-gray-300 overflow-hidden mr-3 flex items-center justify-center">
+                        <div class="relative">
+                            <div id="shareButton2" class="rounded-full h-9 w-9 bg-gray-300 overflow-hidden mr-3 flex items-center justify-center cursor-pointer">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                  </svg>
+                                  
+                            </div>
+                        
+                            <!-- Dropdown -->
+                            <div id="dropdownMenu2" class="absolute left-0 mt-2 w-60 bg-white rounded-md shadow-lg hidden border">
+                                <div class="py-1">
+                                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-3 w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M3 3v1.5M3 21v-6m0 0 2.77-.693a9 9 0 0 1 6.208.682l.108.054a9 9 0 0 0 6.086.71l3.114-.732a48.524 48.524 0 0 1-.005-10.499l-3.11.732a9 9 0 0 1-6.085-.711l-.108-.054a9 9 0 0 0-6.208-.682L3 4.5M3 15V4.5" />
+                                          </svg>
+                                                                                  
+                                        Reportar
+                                    </a>
+                                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class=" mr-3 w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M8.625 9.75a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H8.25m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0H12m4.125 0a.375.375 0 1 1-.75 0 .375.375 0 0 1 .75 0Zm0 0h-.375m-13.5 3.01c0 1.6 1.123 2.994 2.707 3.227 1.087.16 2.185.283 3.293.369V21l4.184-4.183a1.14 1.14 0 0 1 .778-.332 48.294 48.294 0 0 0 5.83-.498c1.585-.233 2.708-1.626 2.708-3.228V6.741c0-1.602-1.123-2.995-2.707-3.228A48.394 48.394 0 0 0 12 3c-2.392 0-4.744.175-7.043.513C3.373 3.746 2.25 5.14 2.25 6.741v6.018Z" />
+                                          </svg>                                          
+                                        Comentar
+                                    </a>
+                                    <a href="#" class="flex items-center px-4 py-2 text-sm text-gray-700 hover:bg-gray-100">
+                                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="mr-3 w-6 h-6">
+                                            <path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12Z" />
+                                          </svg>
+                                          
+                                        Favoritos
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                        
                       
-                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-4 h-4">
-                                <path stroke-linecap="round" stroke-linejoin="round" d="M6.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM12.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0ZM18.75 12a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                              </svg>
-                                                            
-                        </div>
                     </div>
                 </div>
                 <img src="https://i.ytimg.com/vi/d1ZnM7CH-v4/maxresdefault.jpg" alt="" class="">
@@ -194,6 +253,70 @@
            
         </div>
     </main>
+    <div id="searchModal" class="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-50 hidden">
+        <div class="bg-white p-6 rounded-md">
+            <span id="closeModal" class="absolute top-2 right-2 cursor-pointer">&times;</span>
+            <h2 class="text-lg font-bold mb-4">Búsqueda en tiempo real</h2>
+            <input type="text" id="realTimeSearchInput" placeholder="Escribe para buscar..." class="p-2 border border-gray-300 rounded-md focus:outline-none focus:border-blue-500 w-full">
+            <!-- Aquí se mostrarían los resultados de la búsqueda en tiempo real -->
+        </div>
+    </div>
+    <script>
+document.addEventListener('DOMContentLoaded', function() {
+    var shareButton1 = document.getElementById('shareButton1');
+    var dropdownMenu1 = document.getElementById('dropdownMenu1');
+
+    shareButton1.addEventListener('click', function() {
+        dropdownMenu1.classList.toggle('hidden');
+    });
+
+    // Cierra el dropdown si se hace clic fuera de él
+    window.addEventListener('click', function(event) {
+        if (!shareButton1.contains(event.target) && !dropdownMenu1.contains(event.target)) {
+            dropdownMenu1.classList.add('hidden');
+        }
+    });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    var shareButton2 = document.getElementById('shareButton2');
+    var dropdownMenu2 = document.getElementById('dropdownMenu2');
+
+    shareButton2.addEventListener('click', function() {
+        dropdownMenu2.classList.toggle('hidden');
+    });
+
+    // Cierra el dropdown si se hace clic fuera de él
+    window.addEventListener('click', function(event) {
+        if (!shareButton2.contains(event.target) && !dropdownMenu2.contains(event.target)) {
+            dropdownMenu2.classList.add('hidden');
+        }
+    });
+});
+
+    </script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+    var searchInput = document.getElementById('searchInput');
+    var searchModal = document.getElementById('searchModal');
+    var closeModal = document.getElementById('closeModal');
+
+    searchInput.addEventListener('click', function() {
+        searchModal.classList.remove('hidden');
+    });
+
+    closeModal.addEventListener('click', function() {
+        searchModal.classList.add('hidden');
+    });
+
+    // Cierra el modal si se hace clic fuera de él
+    window.addEventListener('click', function(event) {
+        if (event.target === searchModal) {
+            searchModal.classList.add('hidden');
+        }
+    });
+});
+    </script>
     <script>
 document.addEventListener('DOMContentLoaded', function() {
     var menuToggle = document.getElementById('menuToggle');
